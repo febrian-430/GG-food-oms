@@ -9,6 +9,10 @@ require 'dotenv'
 
 Dotenv.load
 
+if ENV["env"] == "prod"
+    set :bind, '0.0.0.0'
+end
+
 get '/' do
     ItemController.index
 end
